@@ -1,0 +1,162 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xingshi.module_mine">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+        <activity
+            android:name="com.xingshi.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name="com.xingshi.register.RegisterActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.forget.ForgetActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.code_login.CodeLoginActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.setting.SettingActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.update_password.UpdatePasswordActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.bind_wechat.BindWeChatActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.replace_phone.ReplacePhoneActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.login_wechat.LoginWeChatActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.predict.PredictActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.order.OrderActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.upgrade.UpGradeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.fans_order.FansOrderActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.group_fans.GroupFansActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name="com.xingshi.operator.OperatorActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.contact_us.ContactUsActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.help_center.HelpCenterActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.collection.CollectionActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.message_center.MessageCenterActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.browse_record.BrowseRecordActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.help_detail.HelpDetailActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.new_guide.NewGuideActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.balance.BalanceActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.message_list.MessageListActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.suggestion.SuggestionActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.suggestion_history.SuggestionHistoryActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.cashout.CashoutActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.message_detail.MessageDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.invite_friends.InviteFriendsActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.up_pay.UpPayActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.user_agreement.UserAgreementActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.points.PointsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+
+        <activity
+            android:name="com.xingshi.ali_account.AliAccountActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.points_mingxi.PointsMXActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.buy2up.Buy2UpActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.up_order_confirm.UpOrderConfirmActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.user_agreement.UserAgreementActivity2"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xingshi.y_mine.y_welfare_center.a_tip_to_release.ATipToReleaseActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/flzx_bg" />
+
+    <include
+        android:id="@+id/a_tip_to_release_include"
+        layout="@layout/include_status" />
+
+    <RelativeLayout
+        android:id="@+id/a_tip_to_release_relative"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_below="@id/a_tip_to_release_include">
+
+        <ImageView
+            android:id="@+id/a_tip_to_release_image_back"
+            android:layout_width="@dimen/dp_28"
+            android:layout_height="@dimen/dp_36"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:padding="@dimen/dp_10"
+            android:src="@drawable/icon_fanhui_bai" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="线报发布"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/sp_17" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/a_tip_to_release_relative"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_37"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="#fff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:text="标题："
+                android:textColor="#ff333333"
+                android:textSize="@dimen/sp_14" />
+
+            <EditText
+                android:id="@+id/a_tip_to_release_edit_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="请输入标题(最多输入12位)"
+                android:maxLength="12"
+                android:textColor="#FF666666"
+                android:textColorHint="#FF666666"
+                android:textSize="@dimen/sp_14" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_13"
+            android:text="内容:"
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/sp_14" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="@dimen/dp_329"
+            android:layout_height="@dimen/dp_264"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_8"
+            android:orientation="vertical"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="@dimen/dp_5"
+            app:cardElevation="@dimen/dp_6">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:visibility="gone"
+                    android:id="@+id/a_tip_to_release_pic"
+                    android:layout_width="@dimen/dp_129"
+                    android:layout_height="@dimen/dp_111"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dp_14"
+                    app:placeholderImage="@drawable/sahngchuan"
+                    app:placeholderImageScaleType="fitXY"
+                    app:roundedCornerRadius="@dimen/dp_2" />
+
+                <EditText
+                    android:visibility="gone"
+                    android:id="@+id/a_tip_to_release_edit_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:background="@null"
+                    android:gravity="center_vertical|top"
+                    android:hint="请输入内容"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10"
+                    android:textColor="#FF999999"
+                    android:textColorHint="#FF999999"
+                    android:textSize="@dimen/sp_13" />
+                <com.xingshi.view.RichEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_100"
+                    android:background="@null"
+                    android:gravity="top|left"
+                    android:hint="编辑内容"
+                    android:textSize="13sp"
+                    android:id="@+id/rich_text"/>
+                <Button
+                    android:visibility="gone"
+                    android:id="@+id/bt"
+                    android:layout_marginTop="@dimen/dp_100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="拍照"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/a_tip_to_release_choose_time"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:text="截止时间:"
+                android:textColor="#ff666666"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:id="@+id/a_tip_to_release_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_22"
+                android:text="2019-10-11 16:23:03"
+                android:textColor="#ff333333"
+                android:textSize="@dimen/sp_12" />
+
+            <View
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_0"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_15"
+                android:src="@drawable/arrow1" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/dp_331"
+            android:layout_height="@dimen/dp_1"
+            android:background="#FFF1F1F1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:text="出价:"
+                android:textColor="#ff666666"
+                android:textSize="@dimen/sp_14" />
+
+            <EditText
+                android:id="@+id/a_tip_to_release_edit_price"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_50"
+                android:background="@null"
+                android:digits="0123456789."
+                android:gravity="center_vertical"
+                android:hint="请输入价格"
+                android:inputType="number"
+                android:textColor="#ff333333"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/dp_331"
+            android:layout_height="@dimen/dp_1"
+            android:background="#FFF1F1F1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:text="出价:"
+                android:textColor="#ff666666"
+                android:textSize="@dimen/sp_14" />
+
+            <EditText
+                android:id="@+id/a_tip_to_release_edit_stockholder_price"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_50"
+                android:background="@null"
+                android:digits="0123456789."
+                android:gravity="center_vertical"
+                android:hint="请输入价格（股东价格按照50%展示，元）"
+                android:inputType="number"
+                android:textColor="#ff333333"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/a_tip_to_release_immediately_release"
+        android:layout_width="@dimen/dp_333"
+        android:layout_height="@dimen/dp_42"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp_30"
+        android:background="@drawable/bg_20_ff4c49de"
+        android:gravity="center"
+        android:text="立即发布"
+        android:textColor="#FFF"
+        android:textSize="@dimen/sp_15" />
+
+</RelativeLayout>

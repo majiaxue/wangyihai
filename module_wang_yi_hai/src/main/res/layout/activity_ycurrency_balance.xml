@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xingshi.y_mine.y_currency_balance.YCurrencyBalanceActivity">
+
+    <ImageView
+        android:id="@+id/y_currency_balance_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_200"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_bi" />
+
+    <LinearLayout
+        android:id="@+id/y_currency_balance_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_status" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45">
+
+            <ImageView
+                android:id="@+id/y_currency_balance_back"
+                android:layout_width="@dimen/dp_28"
+                android:layout_height="@dimen/dp_35"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:padding="@dimen/dp_10"
+                android:src="@drawable/icon_fanhui_bai" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="币种余额"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/sp_17" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/y_currency_balance_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/y_currency_balance_linear"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_30"
+        android:includeFontPadding="false"
+        android:text="100.00"
+        android:textColor="#ffffffff"
+        android:textSize="@dimen/sp_34"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/y_currency_balance_num"
+        android:layout_centerHorizontal="true"
+        android:includeFontPadding="false"
+        android:text="系统币"
+        android:textColor="#ffffffff"
+        android:textSize="@dimen/sp_14" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/y_currency_balance_tab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_below="@id/y_currency_balance_image"
+        android:background="#FFF"
+        app:tabIndicatorColor="#FF4C49DE"
+        app:tabIndicatorFullWidth="false"
+        app:tabMode="fixed"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabSelectedTextColor="#FF4C49DE"
+        app:tabTextColor="#333333" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_below="@id/y_currency_balance_tab"
+        android:id="@+id/y_currency_balance_smart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/y_currency_balance_rec"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/y_currency_balance_tab"
+            android:overScrollMode="never" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.xingshi.y_main">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup">
+        <activity android:name="com.xingshi.y_mine.y_welfare_center.i_released.IReleasedActivity"></activity>
+        <activity android:name="com.xingshi.y_mine.y_setting.about_me.AboutMeActivity" />
+        <activity
+            android:name="com.xingshi.y_mine.certification.CertificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.y_deal.trading_center.TradingCenterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.y_deal.appeal.AppealActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_deal.sale.SaleActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_deal.sell.SellActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_deal.my_sell_order.MySellOrderActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_deal.ask_to_buy.AskToBuyActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_deal.my_pay_order_details.MyPayOrderDetailsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_deal.my_pay_order.MyPayOrderActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_deal.release_order.ReleaseOrderActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_mine.y_welfare_center.commission_task_details.CommissionTaskDetailsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_mine.promotion_code.PromotionCodeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_mine.y_welfare_center.commission_task.CommissionTaskActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_mine.y_welfare_center.release_a_task.ReleaseATaskActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_mine.y_welfare_center.pay_a_tip_details.PayATipDetailsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_mine.y_welfare_center.pay_a_tip.PayATipActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_mine.y_welfare_center.a_tip_to_release.ATipToReleaseActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_mine.y_welfare_center.task_list.TaskListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.y_mine.y_welfare_center.YWelfareCenterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.y_mine.y_bill.YBillActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.y_mine.y_balance_account.YBalanceAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.y_mine.y_upgrade_merchant.YUpgradeMerchantActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.y_mine.y_liveness.YLivenessActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.y_mine.y_commission.YCommissionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.y_mine.y_contribution_value.YContributionValueActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.y_mine.y_currency_balance.YCurrencyBalanceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.y_mine.y_my_team.YMyTeamActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.y_mine.y_my_task.take_records.TakeRecordsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.y_mine.y_my_task.YMyTaskActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.y_mine.y_setting.y_change_password.YChangePasswordActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_mine.y_setting.YSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.y_mine.y_personal_details.y_change_phone.YChangePhoneActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_mine.y_personal_details.YPersonalDetailsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_confirm_payment.YConfirmPaymentActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_mine.y_shipping_address.y_amendaddress.YAmendAddressActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_mine.y_shipping_address.y_address.YAddressActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.xingshi.y_mine.y_shipping_address.YShippingAddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.y_confirm_order.YConfirmOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.y_home.y_goods_details.YGoodsDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".YMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.y_mine.auditing.AuditingActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.xingshi.y_mine.auditing.xiangqing.AuditingDetialActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+    </application>
+
+</manifest>

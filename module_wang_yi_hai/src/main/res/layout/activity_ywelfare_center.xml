@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.xingshi.y_mine.y_welfare_center.YWelfareCenterActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/flzx_bg"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_status" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45">
+
+            <ImageView
+                android:id="@+id/y_welfare_center_back"
+                android:layout_width="@dimen/dp_28"
+                android:layout_height="@dimen/dp_35"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:padding="@dimen/dp_10"
+                android:src="@drawable/icon_fanhui_bai" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="福利中心"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/sp_17" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_331"
+            android:layout_height="@dimen/dp_114"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@drawable/kapian_jin"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_51"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/y_welfare_center_singularization"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="#ff996633"
+                    android:textSize="@dimen/sp_21"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="@dimen/dp_0"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="历史成交订单数"
+                    android:textColor="#ff996633"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="@dimen/dp_51"
+                android:background="#FFF8F7F5" />
+
+            <LinearLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_51"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/y_welfare_center_task_earnings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ 0"
+                    android:textColor="#ff996633"
+                    android:textSize="@dimen/sp_21"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="@dimen/dp_0"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="下发任务收益"
+                    android:textColor="#ff996633"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/y_welfare_center_release_task"
+            android:layout_width="@dimen/dp_312"
+            android:layout_height="@dimen/dp_46"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@drawable/quanyi_hei"
+            android:gravity="center"
+            android:text="发布任务 享受更多权益"
+            android:textColor="#FFFCEBC9"
+            android:textSize="@dimen/sp_17" />
+
+        <com.kongzue.tabbar.TabBarView
+            android:id="@+id/y_welfare_center_tab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_70"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_18"
+            app:noDyeing="true"
+            app:noSelect="true"
+            app:normalColor="#FFF9E2B3"
+            app:paddingNavigationBar="false"
+            app:tabClickBackground="empty"
+            app:textSize="@dimen/sp_12" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/y_welfare_center_commission_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/flzx_yongjin" />
+
+        <ImageView
+            android:id="@+id/y_welfare_center_pay_a_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:src="@drawable/flzx_fufei" />
+
+    </LinearLayout>
+
+</LinearLayout>

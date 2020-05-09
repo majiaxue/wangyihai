@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.xingshi.module_user_mine">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name="com.xingshi.mineorder.staydeliverygoods.orderdetails.OrderDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.logisticsinformation.LogisticsInformationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.obligation.ObligationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.refundparticulars.RefundParticularsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.refund.RefundSucceedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.refund.RefundActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.browsinghistory.BrowsingHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.alteration.AlterationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.mineorder.MineOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.shopcollect.ShopCollectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.shippingaddress.amendaddress.AmendAddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.coupon.CouponActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.businessapplication.BusinessApplicationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.shippingaddress.address.AddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.shippingaddress.ShippingAddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.goodscollection.GoodsCollectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.order_assess.OrderAssessActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.xingshi.module_home">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup">
+
+        <activity
+            android:name="com.xingshi.flashsale.FlashSaleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.productcenter.ProductCenterActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.productdetail.ProductDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.web_detail.WebDetailActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+
+        <activity
+            android:name="com.xingshi.universallist.UniversalListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.shakestock.ShakeStockActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.freecharge.FreeChargeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.punchsign.PunchSignActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.secondarydetails.SecondaryDetailsActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.main.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.search.SearchActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.main.GuideActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xingshi.main.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

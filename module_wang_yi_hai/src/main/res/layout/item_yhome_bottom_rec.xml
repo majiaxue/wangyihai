@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/bg_10_fff"
+        android:orientation="vertical">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/y_home_bottom_img"
+            android:layout_width="@dimen/dp_161"
+            android:layout_height="@dimen/dp_191"
+            android:layout_gravity="center_horizontal"
+            app:roundBottomLeft="false"
+            app:roundBottomRight="false"
+            app:roundedCornerRadius="@dimen/dp_10" />
+
+        <TextView
+            android:id="@+id/y_home_bottom_name"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_10"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="2" />
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_8"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/y_home_bottom_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:includeFontPadding="false"
+                android:text="￥ 30"
+                android:textColor="#FFC91818"
+                android:textSize="@dimen/sp_17" />
+
+            <View
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_0"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/y_home_bottom_original_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥180.00"
+                android:textColor="#ff999999"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/y_home_bottom_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="已售1048笔"
+                android:textColor="#FF969696"
+                android:textSize="@dimen/sp_11" />
+
+            <View
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_0"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/y_home_bottom_predict"
+                android:layout_width="@dimen/dp_58"
+                android:layout_height="@dimen/dp_20"
+                android:background="@drawable/bg_10_ffc91818"
+                android:gravity="center"
+                android:text="立即购买"
+                android:textColor="#FFFFFFFF"
+                android:textSize="@dimen/sp_11" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/y_home_bottom_is_visibility"
+        android:layout_width="@dimen/dp_38"
+        android:layout_height="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_24"
+        android:src="@drawable/on" />
+
+</RelativeLayout>

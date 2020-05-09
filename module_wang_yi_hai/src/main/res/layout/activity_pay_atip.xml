@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xingshi.y_mine.y_welfare_center.pay_a_tip.PayATipActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/flzx_bg" />
+
+    <include
+        android:id="@+id/pay_a_tip_include"
+        layout="@layout/include_status" />
+
+    <RelativeLayout
+        android:id="@+id/pay_a_tip_relative"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_below="@id/pay_a_tip_include">
+
+        <ImageView
+            android:id="@+id/pay_a_tip_image_back"
+            android:layout_width="@dimen/dp_28"
+            android:layout_height="@dimen/dp_36"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:padding="@dimen/dp_10"
+            android:src="@drawable/icon_fanhui_bai" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="付费线报"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/sp_17" />
+    </RelativeLayout>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/pay_a_tip_smart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/pay_a_tip_relative">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/pay_a_tip_rec"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</RelativeLayout>

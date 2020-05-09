@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.xingshi.y_main.YMainActivity">
+
+    <com.xingshi.view.WindowInsetsFrameLayout
+        android:id="@+id/y_main_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <com.kongzue.tabbar.TabBarView
+        android:id="@+id/y_main_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_55"
+        app:focusColor="#3e78ed"
+        app:iconPadding="@dimen/dp_2"
+        app:normalColor="#606060"
+        app:noDyeing="true"
+        app:paddingNavigationBar="false"
+        app:tabClickBackground="gray"
+        app:tabPaddingVertical="@dimen/dp_5"
+        app:textSize="@dimen/sp_12" />
+
+</LinearLayout>

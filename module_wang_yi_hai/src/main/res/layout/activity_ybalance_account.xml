@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.xingshi.y_mine.y_balance_account.YBalanceAccountActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_277"
+        android:background="@drawable/bg_yongjin">
+
+        <include
+            android:id="@+id/y_balance_account_include"
+            layout="@layout/include_status" />
+
+        <RelativeLayout
+            android:id="@+id/y_balance_account_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:layout_below="@id/y_balance_account_include">
+
+            <ImageView
+                android:id="@+id/y_balance_account_back"
+                android:layout_width="@dimen/dp_28"
+                android:layout_height="@dimen/dp_35"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:padding="@dimen/dp_10"
+                android:src="@drawable/icon_fanhui_bai" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="账户余额"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/sp_17" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/y_balance_account_linear1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/y_balance_account_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_58"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/y_balance_account_total_assets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/sp_34" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="总资产（元）"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/sp_17" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/y_balance_account_top_up"
+            android:layout_width="@dimen/dp_98"
+            android:layout_height="@dimen/dp_30"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_15_jianbian_huang"
+            android:gravity="center"
+            android:text="充值"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/sp_17" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:background="#FFF"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_20"
+        android:text="账户明细"
+        android:textColor="#FF4C49DE"
+        android:textSize="@dimen/sp_18" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/y_balance_account_smart"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/y_balance_account_rec"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <TextView
+        android:id="@+id/y_upgrade_merchant_release_task"
+        android:layout_width="@dimen/dp_333"
+        android:layout_height="@dimen/dp_42"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:background="@drawable/bg_20_ff4c49de"
+        android:gravity="center"
+        android:text="发布任务"
+        android:textColor="#ffffffff"
+        android:textSize="@dimen/sp_15" />
+
+</LinearLayout>

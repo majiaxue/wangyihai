@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.xingshi.y_mine.y_liveness.YLivenessActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_365"
+        android:background="@drawable/bg_huoyuedu">
+
+        <include
+            android:id="@+id/y_liveness_include"
+            layout="@layout/include_status" />
+
+        <RelativeLayout
+            android:id="@+id/y_liveness_relative"
+            android:layout_width="match_parent"
+            android:layout_below="@id/y_liveness_include"
+            android:layout_height="@dimen/dp_45">
+
+            <ImageView
+                android:id="@+id/y_liveness_back"
+                android:layout_width="@dimen/dp_28"
+                android:layout_height="@dimen/dp_35"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:padding="@dimen/dp_10"
+                android:src="@drawable/icon_fanhui_bai" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="活跃度"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/sp_17" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="@dimen/dp_215"
+            android:layout_height="@dimen/dp_215"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/y_liveness_relative"
+            android:layout_marginTop="@dimen/dp_38"
+            android:background="@drawable/duzhi"
+            android:gravity="center"
+            android:text="1.00"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/dp_38" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注："
+            android:textColor="#ff333333"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="激活赠送1个活跃度"
+            android:textColor="#FFCC0000"
+            android:textSize="@dimen/sp_12" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

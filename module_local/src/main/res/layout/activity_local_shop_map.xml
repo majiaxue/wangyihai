@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/local_shop_map_mapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include layout="@layout/page_top" />
+
+    <Button
+        android:id="@+id/local_shop_map_btn"
+        android:layout_width="@dimen/dp_345"
+        android:layout_height="@dimen/dp_45"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp_50"
+        android:background="@drawable/bg_22_fba_fb4"
+        android:text="百度地图导航"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/sp_16" />
+</RelativeLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/pop_fuli_cancel"
+        android:layout_width="@dimen/dp_33"
+        android:layout_height="@dimen/dp_33"
+        android:layout_above="@id/pop_fuli_relative"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_15"
+        android:src="@drawable/guanbi" />
+
+    <RelativeLayout
+        android:id="@+id/pop_fuli_relative"
+        android:layout_width="@dimen/dp_278"
+        android:layout_height="@dimen/dp_380"
+        android:layout_centerInParent="true"
+        android:background="@drawable/huojian">
+
+        <TextView
+            android:id="@+id/pop_fuli_release_a_task"
+            android:layout_width="@dimen/dp_102"
+            android:layout_height="@dimen/dp_36"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/dp_25"
+            android:layout_marginBottom="@dimen/dp_24"
+            android:background="@drawable/bg_16_ffff9933"
+            android:gravity="center"
+            android:text="发布任务"
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/sp_15" />
+
+        <TextView
+            android:id="@+id/pop_fuli_release_a_tip"
+            android:layout_width="@dimen/dp_102"
+            android:layout_height="@dimen/dp_36"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="@dimen/dp_25"
+            android:layout_marginBottom="@dimen/dp_24"
+            android:background="@drawable/bg_16_ff4c49de"
+            android:gravity="center"
+            android:text="发布线报"
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/sp_15" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

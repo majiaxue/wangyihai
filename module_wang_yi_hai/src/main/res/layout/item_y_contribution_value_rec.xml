@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_83"
+    android:layout_marginTop="@dimen/dp_10"
+    android:layout_marginBottom="@dimen/dp_10"
+    app:cardBackgroundColor="#FFF"
+    app:cardElevation="@dimen/dp_10">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/y_contribution_value_rec_pic"
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_15"
+            android:src="@drawable/jinbi1"/>
+
+        <TextView
+            android:id="@+id/y_contribution_value_rec_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/y_contribution_value_rec_pic"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:text="2019-10-10  16:23:01"
+            android:textColor="#ff666666"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/y_contribution_value_rec_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/y_contribution_value_rec_pic"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_toRightOf="@id/y_contribution_value_rec_pic"
+            android:includeFontPadding="false"
+            android:text="查看商品"
+            android:textColor="#FF7C5FFF"
+            android:textSize="@dimen/sp_13" />
+
+        <TextView
+            android:id="@+id/y_contribution_value_rec_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_15"
+            android:includeFontPadding="false"
+            android:text="-25.00"
+            android:textColor="#ffcc0000"
+            android:textSize="@dimen/sp_17" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

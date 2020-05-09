@@ -1,0 +1,1 @@
+include ':app', ':module_base', ':module_mine', ':module_home', ':module_classify', ':module_user_store', ':module_user_mine', ':module_local', 'jdsdk_lib', 'module_wang_yi_hai'
