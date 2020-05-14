@@ -92,6 +92,15 @@ public class UserInfoBean implements Serializable {
     private String cashOutStringegration;
     private String StringegrationCashOutNote;
     private String totalFans;
+    private String gd;
+
+    public String getGd() {
+        return gd;
+    }
+
+    public void setGd(String gd) {
+        this.gd = gd;
+    }
 
     public String getTotalFans() {
         return totalFans;

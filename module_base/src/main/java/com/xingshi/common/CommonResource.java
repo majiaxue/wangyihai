@@ -1,7 +1,7 @@
 package com.xingshi.common;
 
 public class CommonResource {
-    public static final String BASEURL_9001 = "http://60.205.190.106:9999";   //商品//60.205.190.106//192.168.0.118
+    public static final String BASEURL_9001 = "http://60.205.190.106:9999";   //商品//60.205.190.106//192.168.0.108
     public static final String BASEURL_4001 = "http://60.205.190.106:4001";   //用户
     public static final String BASEURL_9003 = "http://60.205.190.106:9003";   //商家
     public static final String BASEURL_9004 = "http://60.205.190.106:9999";   //订单
@@ -318,6 +318,7 @@ public class CommonResource {
 
     public static final String WEBVIEW = "webView";     //佣金比例
 
+    public static final String GD = "gd";
     public static final String TASK = "task";
     public static final String HOME = "home";
     public static final String QUKUAI = "qukuai"; //本地商城订单支付  微信
@@ -331,6 +332,6 @@ public class CommonResource {
     //Url：127.0.0.1:9006/rest/block/commission/getBlockCommissionExamineById
     public static final String SHENGHEXIANGQING ="/rest/block/commission/getBlockCommissionExamineById";
     ///rest/block/commission//commissionExamine
-    public static final String TONGYI ="/rest/block/commission//commissionExamine";
+    public static final String TONGYI ="/rest/block/commission/commissionExamine";
 
 }

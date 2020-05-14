@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Environment;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -239,6 +240,9 @@ public class MinePresenter extends BasePresenter<MineView> {
                 SPUtil.addParm(CommonResource.USER_NAME, userInfoBean.getNickname());
                 SPUtil.addParm(CommonResource.LEVELID, userInfoBean.getLevelId());
                 SPUtil.addParm(CommonResource.LEVEL, userInfoBean.getLevel());
+                SPUtil.addParm(CommonResource.GD, userInfoBean.getGd());
+                LogUtil.e("股东---" + userInfoBean.getGd());
+                LogUtil.e("股东---" + SPUtil.getStringValue(CommonResource.GD));
 
                 getBackBili();
 

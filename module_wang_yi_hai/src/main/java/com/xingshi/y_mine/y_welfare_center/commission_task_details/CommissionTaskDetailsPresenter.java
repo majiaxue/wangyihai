@@ -29,6 +29,7 @@ import com.xingshi.bean.AliPayBean;
 import com.xingshi.bean.CommissionTaskDetailsBean;
 import com.xingshi.bean.TaskListDetailsBean;
 import com.xingshi.bean.WeChatPayBean;
+import com.xingshi.bean.XSBlockExamineImg;
 import com.xingshi.common.CommonResource;
 import com.xingshi.mvp.BasePresenter;
 import com.xingshi.net.OnDataListener;
@@ -430,8 +431,8 @@ public class CommissionTaskDetailsPresenter extends BasePresenter<CommissionTask
         }
     }
 
-    public void commit(int id, List<String> imgs) {
-        Map build = MapUtil.getInstance().addParms("id", id).addParms("XsBlockCommissionImg", imgs).build();
+    public void commit(int id, List<XSBlockExamineImg.ImgBean> imgs) {
+        Map build = MapUtil.getInstance().addParms("id", id).addParms("img", imgs).build();
         String jsonString = JSON.toJSONString(build);
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), jsonString);
         Observable<ResponseBody> responseBodyObservable = RetrofitUtil.getInstance().getApi(CommonResource.BASEURL_9006).postDataWithBody(CommonResource.SAVECOMMISSIONEXAMINE, requestBody);

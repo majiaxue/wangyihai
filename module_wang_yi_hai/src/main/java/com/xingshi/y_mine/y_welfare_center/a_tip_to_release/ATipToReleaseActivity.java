@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.xingshi.mvp.BaseActivity;
 import com.xingshi.utils.LogUtil;
 import com.xingshi.view.CustomHtml;
@@ -90,10 +91,10 @@ public class ATipToReleaseActivity extends BaseActivity<ATipToReleaseView, ATipT
             }
         });
 
-        aTipToReleasePic.setOnClickListener(new View.OnClickListener() {
+        bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.popupWindow();
+                ARouter.getInstance().build("/model_wangyihai/FuWenBenActivity").navigation();
             }
         });
     }

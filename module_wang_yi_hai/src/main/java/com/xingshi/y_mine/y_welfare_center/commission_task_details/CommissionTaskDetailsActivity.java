@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.xingshi.bean.CommissionTaskDetailsBean;
 import com.xingshi.bean.TaskListDetailsBean;
+import com.xingshi.bean.XSBlockExamineImg;
 import com.xingshi.common.CommonResource;
 import com.xingshi.entity.EventBusBean;
 import com.xingshi.mvp.BaseActivity;
@@ -154,7 +155,13 @@ public class CommissionTaskDetailsActivity extends BaseActivity<CommissionTaskDe
             public void onClick(View v) {
                 if (0 == status) {
                     if (imgs.size() != 0) {
-                        presenter.commit(id, imgs);
+                        LogUtil.e("这是图--------"+imgs.toString());
+                        List<XSBlockExamineImg.ImgBean> list=new ArrayList<>();
+                        for (int i = 0; i <imgs.size() ; i++) {
+                            list.add(new XSBlockExamineImg.ImgBean(imgs.get(i)));
+                            LogUtil.e("xsdelist========="+list.toString());
+                        }
+                        presenter.commit(id, list);
                     } else {
                         Toast.makeText(CommissionTaskDetailsActivity.this, "请上传截图", Toast.LENGTH_SHORT).show();
                     }

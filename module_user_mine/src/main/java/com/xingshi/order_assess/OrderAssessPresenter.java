@@ -27,6 +27,7 @@ import com.xingshi.order_assess.adapter.OrderAssessAdapter;
 import com.xingshi.utils.LogUtil;
 import com.xingshi.utils.OnChangeHeaderListener;
 import com.xingshi.utils.PopUtils;
+import com.xingshi.utils.SPUtil;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class OrderAssessPresenter extends BasePresenter<OrderAssessView> {
     private List<String> uriList = new ArrayList<>();
     private OrderAssessAdapter adapter;
     private Uri fileUri;
-    private String filePath = Environment.getExternalStorageDirectory() + "/wyh/image";
+    private String filePath = Environment.getExternalStorageDirectory() + "/fltk/image";
     private int flag = 0;
     private File file1;
     private RequestBody imgBody;
@@ -80,7 +81,7 @@ public class OrderAssessPresenter extends BasePresenter<OrderAssessView> {
         adapter.setOnItemClick(new MyRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(RecyclerView parent, View view, int position) {
-                PopUtils.seeBigImg(mContext, uriList.get(position));
+                //PopUtils.seeBigImg(mContext, Uri.parse(uriList.get(position)));
             }
         });
     }
@@ -115,9 +116,9 @@ public class OrderAssessPresenter extends BasePresenter<OrderAssessView> {
             file0.mkdirs();
         }
         file1 = new File(filePath, System.currentTimeMillis() + ".jpg");
-
         Intent captureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+
             fileUri = FileProvider.getUriForFile(mContext.getApplicationContext(), mContext.getPackageName(), file1);
             captureIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
         } else {

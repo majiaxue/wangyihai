@@ -255,6 +255,7 @@ public class ATipToReleasePresenter extends BasePresenter<ATipToReleaseView> {
             //第一个参数：上传文件的key；第二个参数：文件名；第三个参数：RequestBody对象
             filePart = MultipartBody.Part.createFormData("file", file.getName(), imgBody);
         }
+        LogUtil.e("filePart----------"+filePart.toString());
         Observable<ResponseBody> responseBodyObservable = RetrofitUtil.getInstance().getApi(CommonResource.BASEURL_4000).postFile(CommonResource.UPLOADORDER, filePart);
         RetrofitUtil.getInstance().toSubscribe(responseBodyObservable, new OnMyCallBack(new OnDataListener() {
             @Override

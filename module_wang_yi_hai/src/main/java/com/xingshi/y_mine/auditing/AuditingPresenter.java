@@ -2,11 +2,16 @@ package com.xingshi.y_mine.auditing;
 
 import android.content.Context;
 import android.support.design.widget.TabLayout;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.alibaba.fastjson.JSON;
+import com.xingshi.adapter.MyRecyclerAdapter;
+import com.xingshi.bean.AuditingBean;
 import com.xingshi.common.CommonResource;
 import com.xingshi.mvp.BasePresenter;
 import com.xingshi.net.OnDataListener;
@@ -16,8 +21,12 @@ import com.xingshi.utils.LogUtil;
 import com.xingshi.utils.MapUtil;
 import com.xingshi.utils.ProcessDialogUtil;
 import com.xingshi.utils.SPUtil;
+import com.xingshi.y_main.R;
+import com.xingshi.y_mine.auditing.adapter.AudutingAdapter;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import io.reactivex.Observable;
@@ -26,16 +35,21 @@ import okhttp3.ResponseBody;
 public class AuditingPresenter extends BasePresenter<AuditingView> {
 
     private String[] titleArr = {"待审核", "已成功", "已拒绝"};
+    private AudutingAdapter adapter;
+    int page;
+    private List<AuditingBean> list=new ArrayList<>();
+    private List<AuditingBean> auditingBeans;
 
     public AuditingPresenter(Context context) {
         super(context);
     }
 
     @Override
-    protected void onViewDestroy() {}
+    protected void onViewDestroy() {
+    }
 
 
-    public void getTab(TabLayout tabLayout){
+    public void getTab(TabLayout tabLayout) {
 
         for (String title : titleArr) {
             tabLayout.addTab(tabLayout.newTab().setText(title));
@@ -47,11 +61,14 @@ public class AuditingPresenter extends BasePresenter<AuditingView> {
             public void onTabSelected(TabLayout.Tab tab) {
                 //ProcessDialogUtil.showProcessDialog(mContext);
                 if (tab.getPosition() == 0) {
-                    loadData("0");
-                }  else if (tab.getPosition() == 1) {
-                    loadData("1");
-                }else if (tab.getPosition()==2){
-                    loadData("2");
+                    loadData(0, page);
+                    getView().getStatus(0);
+                } else if (tab.getPosition() == 1) {
+                    loadData(1, page);
+                    getView().getStatus(1);
+                } else if (tab.getPosition() == 2) {
+                    loadData(2, page);
+                    getView().getStatus(2);
                 }
             }
 
@@ -66,36 +83,48 @@ public class AuditingPresenter extends BasePresenter<AuditingView> {
             }
         });
     }
+
     //佣金审核任务列表
-    public  void loadData(String status){
-        Map map = MapUtil.getInstance().addParms("status",status).build();
-        Observable<ResponseBody> headWithout = RetrofitUtil.getInstance().getApi(CommonResource.BASEURL_9006).getHead(CommonResource.YONGJINSHENGHE,map, SPUtil.getToken());
-        LogUtil.e("这是token-----------"+SPUtil.getToken());
-        RetrofitUtil.getInstance().toSubscribe(headWithout,new OnMyCallBack(new OnDataListener() {
+    public void loadData(final int status, final int page) {
+        this.page = page;
+        LogUtil.e("page---------"+page);
+        LogUtil.e("status--------"+status);
+        Map map = MapUtil.getInstance().addParms("status", status).addParms("page", page).build();
+        Observable<ResponseBody> headWithout = RetrofitUtil.getInstance().getApi(CommonResource.BASEURL_9006).getHead(CommonResource.YONGJINSHENGHE, map, SPUtil.getToken());
+        LogUtil.e("这是token-----------" + SPUtil.getToken());
+        RetrofitUtil.getInstance().toSubscribe(headWithout, new OnMyCallBack(new OnDataListener() {
             @Override
             public void onSuccess(String result, String msg) {
-                LogUtil.e("审核列表----"+result);
+                LogUtil.e("审核列表----" + result);
+                auditingBeans = JSON.parseArray(result, AuditingBean.class);
+                LogUtil.e("审核列表解析后-------"+auditingBeans.toString());
+                if (page==1){
+                    list.clear();
+                }
+                list.addAll(auditingBeans);
+                if (adapter == null) {
+                    adapter = new AudutingAdapter(mContext, list, R.layout.item_auduting);
+                    getView().loadAdapter(adapter);
+                    getView().refresh();
+                } else {
+                    adapter.notifyDataSetChanged();
+                }
+                adapter.setOnItemClick(new MyRecyclerAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(RecyclerView parent, View view, int position) {
+                        ARouter.getInstance().build("/model_wangyihai/AuditingDetialActivity")
+                                .withString("id",auditingBeans.get(position).getId())
+                                .withInt("status",status)
+                                .navigation();
+                    }
+                });
+
+
             }
 
             @Override
             public void onError(String errorCode, String errorMsg) {
-                LogUtil.e("审核列表错误信息-----"+errorCode+"--------------"+errorMsg);
-            }
-        }));
-    }
-
-    public void getDetialData(){
-        Map id = MapUtil.getInstance().addParms("id", "45").build();
-        Observable head = RetrofitUtil.getInstance().getApi(CommonResource.BASEURL_9006).getHead(CommonResource.SHENGHEXIANGQING, id, SPUtil.getToken());
-        RetrofitUtil.getInstance().toSubscribe(head,new OnMyCallBack(new OnDataListener() {
-            @Override
-            public void onSuccess(String result, String msg) {
-                LogUtil.e("佣金审核详情--------"+result);
-            }
-
-            @Override
-            public void onError(String errorCode, String errorMsg) {
-                LogUtil.e("审核列表详情错误信息-----"+errorCode+"--------------"+errorMsg);
+                LogUtil.e("审核列表错误信息-----" + errorCode + "--------------" + errorMsg);
             }
         }));
     }
@@ -145,19 +174,5 @@ public class AuditingPresenter extends BasePresenter<AuditingView> {
         });
     }
 
-    public void getPanDuan(){
-        Map build = MapUtil.getInstance().addParms("status ", "1").addParms("id","45").build();
-        Observable head = RetrofitUtil.getInstance().getApi(CommonResource.BASEURL_9006).getHead(CommonResource.TONGYI, build, SPUtil.getToken());
-        RetrofitUtil.getInstance().toSubscribe(head,new OnMyCallBack(new OnDataListener() {
-            @Override
-            public void onSuccess(String result, String msg) {
-                LogUtil.e("同意或拒绝--------"+result);
-            }
 
-            @Override
-            public void onError(String errorCode, String errorMsg) {
-                LogUtil.e("同意或拒绝错误信息-----------"+errorCode+"----------"+errorMsg);
-            }
-        }));
-    }
 }

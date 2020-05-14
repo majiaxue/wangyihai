@@ -360,8 +360,7 @@ public class CustomHtml {
         return style.append("\"").toString();
     }
 
-    private static void withinBlockquote(StringBuilder out, Spanned text, int start, int end,
-                                         int option) {
+    private static void withinBlockquote(StringBuilder out, Spanned text, int start, int end,int option) {
         if ((option & TO_HTML_PARAGRAPH_FLAG) == TO_HTML_PARAGRAPH_LINES_CONSECUTIVE) {
             withinBlockquoteConsecutive(out, text, start, end);
         } else {

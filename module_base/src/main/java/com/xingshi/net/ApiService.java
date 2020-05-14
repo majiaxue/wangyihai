@@ -86,4 +86,7 @@ public interface ApiService {
     @Multipart
     @POST
     Observable<ResponseBody> postFile(@Url String url, @Part MultipartBody.Part file);
+    @Multipart
+    @POST
+    Observable<ResponseBody> postFile2(@Url String url, @Part MultipartBody.Part file, @Header("Authorization") String token);
 }

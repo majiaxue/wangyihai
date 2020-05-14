@@ -168,10 +168,8 @@ public class BusinessApplicationActivity extends BaseActivity<BusinessApplicatio
                     Toast.makeText(BusinessApplicationActivity.this, "请选择头像", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(map.get("1"))) {
                     Toast.makeText(BusinessApplicationActivity.this, "请上传身份证正面", Toast.LENGTH_SHORT).show();
-
                 } else if (TextUtils.isEmpty(map.get("2"))) {
                     Toast.makeText(BusinessApplicationActivity.this, "请上传身份证背面", Toast.LENGTH_SHORT).show();
-
                 } else if (TextUtils.isEmpty(map.get("3"))) {
                     Toast.makeText(BusinessApplicationActivity.this, "请上传营业执照", Toast.LENGTH_SHORT).show();
 

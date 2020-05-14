@@ -161,6 +161,10 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />
+        <activity android:name="com.xingshi.y_mine.y_welfare_center.fuwenben.FuWenBenActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
     </application>
 
 </manifest>
