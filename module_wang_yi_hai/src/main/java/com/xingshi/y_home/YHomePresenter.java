@@ -112,11 +112,11 @@ public class YHomePresenter extends BasePresenter<YHomeView> {
     public void setRecTop(TabBarView yHomeTop) {
 
         List<Tab> tabs2 = new ArrayList<>();
-        tabs2.add(new Tab(mContext, "品牌榜单", R.drawable.pinpai));
-        tabs2.add(new Tab(mContext, "服饰专区", R.drawable.fushi));
-        tabs2.add(new Tab(mContext, "数码电子", R.drawable.shuma));
-        tabs2.add(new Tab(mContext, "生活超市", R.drawable.chaoshi));
-        tabs2.add(new Tab(mContext, "生鲜专送", R.drawable.shengxian));
+        tabs2.add(new Tab(mContext, "异业联盟", R.drawable.c1));
+        tabs2.add(new Tab(mContext, "副业刚需", R.drawable.c2));
+        tabs2.add(new Tab(mContext, "链态商城", R.drawable.c3));
+        tabs2.add(new Tab(mContext, "优质线报", R.drawable.c4));
+        tabs2.add(new Tab(mContext, "兼职", R.drawable.c5));
         yHomeTop.setTab(tabs2);
 
         yHomeTop.setOnTabChangeListener(new OnTabChangeListener() {

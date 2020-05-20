@@ -302,6 +302,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="扣除手续费:"
@@ -309,6 +310,7 @@
                 android:textSize="@dimen/sp_12" />
 
             <TextView
+                android:visibility="gone"
                 android:id="@+id/release_order_release_sale_service_charge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -19,7 +19,7 @@ public class YDealAdapter extends MyRecyclerAdapter<YDealBean.RecordsBean> {
     public void convert(RecyclerViewHolder holder, YDealBean.RecordsBean data, int position) {
         holder.setImageFresco(R.id.y_deal_rec_pic, data.getIcon() == null ? "" : data.getIcon())
                 .setText(R.id.y_deal_rec_name, data.getUserName())
-                .setText(R.id.y_deal_rec_id, "ID：" + data.getUserCode())
+                .setText(R.id.y_deal_rec_id, "ID：" + data.getId())
                 .setText(R.id.y_deal_rec_content, "买入" + data.getNumber() + "币种");
 
         viewOnClickListener.ViewOnClick(holder.getView(R.id.y_deal_rec_sell), position);

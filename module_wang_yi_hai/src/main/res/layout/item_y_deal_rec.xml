@@ -35,7 +35,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/y_deal_rec_name"
             android:layout_alignLeft="@id/y_deal_rec_name"
-            android:layout_marginTop="@dimen/dp_7"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="7dp"
             android:layout_toRightOf="@id/y_deal_rec_pic"
             android:includeFontPadding="false"
             android:text="ID：0112212"
@@ -52,7 +53,19 @@
             android:drawablePadding="@dimen/dp_8"
             android:gravity="bottom"
             android:includeFontPadding="false"
-            android:text="买入500.00币种"
+            android:text="买入"
+            android:textColor="#ff333333"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:layout_marginTop="@dimen/dp_5"
+            android:id="@+id/dan_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/y_deal_rec_id"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/y_deal_rec_content"
+            android:text="单价:"
             android:textColor="#ff333333"
             android:textSize="@dimen/sp_12" />
 

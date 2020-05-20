@@ -20,8 +20,6 @@ import butterknife.BindView;
  * 发布买卖单
  */
 public class ReleaseOrderActivity extends BaseActivity<ReleaseOrderView, ReleaseOrderPresenter> implements ReleaseOrderView {
-
-
     @BindView(R2.id.release_order_back)
     ImageView releaseOrderBack;
     @BindView(R2.id.release_order_tab)
@@ -242,11 +240,12 @@ public class ReleaseOrderActivity extends BaseActivity<ReleaseOrderView, Release
     @Override
     public void serviceCharge(double serviceCharge, String max, String less) {
         this.serviceCharge = serviceCharge;
-        releaseOrderReleaseSaleRule.setText("卖单最低限制" + less + "个币\n" + "买单最高限制" + max + "个币,并扣除相应手续费");
+        releaseOrderReleaseSaleRule.setText("卖币扣除1倍贡献值\n"+ "平台回购价10元起");
     }
 
     @Override
     public void serviceCharge(String max, String less) {
-        releaseOrderReleaseTheCheckRule.setText("买单最低限制" + less + "个币\n" + "买单最高限制" + max + "个币");
+        //releaseOrderReleaseTheCheckRule.setText("买单最低限制" + less + "个币\n" + "买单最高限制" + max + "个币");
+        releaseOrderReleaseTheCheckRule.setText("买币奖励两倍贡献值\n"+"平台回购价10元");
     }
 }

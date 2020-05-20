@@ -101,7 +101,7 @@ public class YDealPresenter extends BasePresenter<YDealView> {
     public void setPalette(TabBarView palette) {
         List<Tab> tabs = new ArrayList<>();
         tabs.add(new Tab(mContext, "发布买卖单", R.drawable.renwu));
-        tabs.add(new Tab(mContext, "兑换商品", R.drawable.shangjia));
+        tabs.add(new Tab(mContext, "兑换礼包", R.drawable.shangjia));
         tabs.add(new Tab(mContext, "我的买单", R.drawable.fuli));
         tabs.add(new Tab(mContext, "我的卖单", R.drawable.zhangdan));
         palette.setTab(tabs);

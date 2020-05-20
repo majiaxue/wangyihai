@@ -47,6 +47,8 @@ public class CustomHtml {
         public Drawable getDrawable(String source);
     }
 
+
+
     /**
      * Is notified when HTML tags are encountered that the parser does
      * not know how to interpret.

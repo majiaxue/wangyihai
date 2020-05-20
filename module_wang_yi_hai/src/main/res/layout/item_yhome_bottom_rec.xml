@@ -15,8 +15,8 @@
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/y_home_bottom_img"
-            android:layout_width="@dimen/dp_161"
-            android:layout_height="@dimen/dp_191"
+            android:layout_width="@dimen/dp_162"
+            android:layout_height="@dimen/dp_162"
             android:layout_gravity="center_horizontal"
             app:roundBottomLeft="false"
             app:roundBottomRight="false"

@@ -91,9 +91,15 @@ public class ATipToReleaseActivity extends BaseActivity<ATipToReleaseView, ATipT
             }
         });
 
-        bt.setOnClickListener(new View.OnClickListener() {
+        aTipToReleasePic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                presenter.popupWindow();
+            }
+        });
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 ARouter.getInstance().build("/model_wangyihai/FuWenBenActivity").navigation();
             }
         });

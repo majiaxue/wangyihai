@@ -192,12 +192,12 @@ public class YGoodsDetailsPresenter extends BasePresenter<YGoodsDetailsView> {
         RetrofitUtil.getInstance().toSubscribe(headWithout,new OnMyCallBack(new OnDataListener() {
             @Override
             public void onSuccess(String result, String msg) {
-
+                LogUtil.e("貌似没用---------"+result);
             }
 
             @Override
             public void onError(String errorCode, String errorMsg) {
-
+                LogUtil.e("貌似没用---------"+errorCode+"---------"+errorMsg);
             }
         }));
     }

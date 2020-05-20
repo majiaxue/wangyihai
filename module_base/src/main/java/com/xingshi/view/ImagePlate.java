@@ -18,6 +18,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.xingshi.module_base.R;
+import com.xingshi.utils.LogUtil;
 
 import java.io.File;
 
@@ -36,8 +37,11 @@ public class ImagePlate {
      * @param path
      */
     public void image(String path) {
+        LogUtil.e("走了这---"+path);
         final Uri uri = Uri.parse(path);
+        LogUtil.e("uri---"+uri.toString());
         final int maxWidth = view.getMeasuredWidth() -view. getPaddingLeft() - view.getPaddingRight();
+       // Glide.with(mContext).load(uri).into(view);
         RequestOptions options = new RequestOptions()
                 .centerCrop()
                 .placeholder(R.drawable.bg_2_fde2d8)

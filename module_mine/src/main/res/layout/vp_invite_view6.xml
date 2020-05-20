@@ -2,12 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="@dimen/dp_270"
     android:layout_height="@dimen/dp_479"
-    android:background="@drawable/inv4">
+    android:background="@drawable/inv5">
 
     <ImageView
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="@dimen/dp_73"
-        android:id="@+id/invite_friends_erweima4"
+        android:id="@+id/invite_friends_erweima6"
         android:layout_width="@dimen/dp_110"
         android:layout_height="@dimen/dp_110"
         android:layout_centerInParent="true"

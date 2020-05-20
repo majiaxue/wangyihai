@@ -50,7 +50,6 @@
             android:layout_marginRight="@dimen/dp_11"
             android:background="@null"
             android:cursorVisible="false"
-            android:inputType="number"
             android:maxLength="6"
             app:borderRadius="@dimen/dp_2"
             app:borderWidth="@dimen/dp_37"

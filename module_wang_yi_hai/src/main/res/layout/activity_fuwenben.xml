@@ -1,21 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_height="match_parent">
-    <com.xingshi.view.RichEditText
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_200"
-        android:background="@null"
-        android:gravity="top|left"
-        android:hint="编辑内容"
-        android:textSize="13sp"
-        android:id="@+id/rich_text"/>
+        android:layout_height="@dimen/dp_100"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+       >
+
+        <com.xingshi.view.RichEditText
+            android:id="@+id/rich_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="top|left"
+            android:hint="编辑内容"
+            android:textSize="16sp"
+            />
+    </ScrollView>
     <Button
         android:id="@+id/bt"
         android:layout_marginTop="@dimen/dp_100"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="拍照"/>
+    <Button
+        android:id="@+id/bt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="生成html"/>
 </LinearLayout>

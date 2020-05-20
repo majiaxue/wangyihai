@@ -10,4 +10,6 @@ public interface FuWenBenView extends IView {
     void takePhoto(Intent captureIntent);
 
     void imagePath(String s);
+
+    void getPath(String data);
 }

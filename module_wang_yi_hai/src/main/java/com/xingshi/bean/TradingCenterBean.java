@@ -88,7 +88,7 @@ public class TradingCenterBean {
         private String userName;
         private String phone;
         private int number;
-        private double price;
+        private String price;
         private double totalPrice;
         private String createTime;
         private int status;
@@ -135,11 +135,11 @@ public class TradingCenterBean {
             this.number = number;
         }
 
-        public double getPrice() {
+        public String getPrice() {
             return price;
         }
 
-        public void setPrice(double price) {
+        public void setPrice(String price) {
             this.price = price;
         }
 

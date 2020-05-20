@@ -44,23 +44,37 @@ public class InviteFriendsPresenter extends BasePresenter<InviteFriendsView> {
     public void loadData() {
         Bitmap qrImage1 = QRCode.createQRImage(CommonResource.INVFRIEND + CommonResource.INVITE_ERWEIMA + "?inviteCode=" + SPUtil.getStringValue(CommonResource.USER_INVITE), (int) mContext.getResources().getDimension(R.dimen.dp_193), (int) mContext.getResources().getDimension(R.dimen.dp_193));
         LogUtil.e("邀请地址-----"+CommonResource.INVFRIEND + CommonResource.INVITE_ERWEIMA + "?inviteCode=" + SPUtil.getStringValue(CommonResource.USER_INVITE));
+
         View view1 = LayoutInflater.from(mContext).inflate(R.layout.vp_invite_view1, null);
         ImageView img1 = view1.findViewById(R.id.invite_friends_erweima1);
         Glide.with(mContext).load(qrImage1).into(img1);
+
         View view2 = LayoutInflater.from(mContext).inflate(R.layout.vp_invite_view2, null);
         ImageView img2 = view2.findViewById(R.id.invite_friends_erweima2);
         Glide.with(mContext).load(qrImage1).into(img2);
+
         View view3 = LayoutInflater.from(mContext).inflate(R.layout.vp_invite_view3, null);
         ImageView img3 = view3.findViewById(R.id.invite_friends_erweima3);
         Glide.with(mContext).load(qrImage1).into(img3);
+
         View view4 = LayoutInflater.from(mContext).inflate(R.layout.vp_invite_view4, null);
         ImageView img4 = view4.findViewById(R.id.invite_friends_erweima4);
         Glide.with(mContext).load(qrImage1).into(img4);
+
+        View view5 = LayoutInflater.from(mContext).inflate(R.layout.vp_invite_view5, null);
+        ImageView img5 = view5.findViewById(R.id.invite_friends_erweima5);
+        Glide.with(mContext).load(qrImage1).into(img5);
+
+        View view6 = LayoutInflater.from(mContext).inflate(R.layout.vp_invite_view6, null);
+        ImageView img6 = view6.findViewById(R.id.invite_friends_erweima6);
+        Glide.with(mContext).load(qrImage1).into(img6);
 
         list.add(view1);
         list.add(view2);
         list.add(view3);
         list.add(view4);
+        list.add(view5);
+        list.add(view6);
         InviteVpAdapter inviteVpAdapter = new InviteVpAdapter(list);
         if (getView() != null) {
             getView().loadVP(inviteVpAdapter, list.size());

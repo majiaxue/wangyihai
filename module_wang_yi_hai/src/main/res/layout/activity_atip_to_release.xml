@@ -101,7 +101,6 @@
                 android:orientation="vertical">
 
                 <com.facebook.drawee.view.SimpleDraweeView
-                    android:visibility="gone"
                     android:id="@+id/a_tip_to_release_pic"
                     android:layout_width="@dimen/dp_129"
                     android:layout_height="@dimen/dp_111"
@@ -112,7 +111,6 @@
                     app:roundedCornerRadius="@dimen/dp_2" />
 
                 <EditText
-                    android:visibility="gone"
                     android:id="@+id/a_tip_to_release_edit_content"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -126,6 +124,7 @@
                     android:textColorHint="#FF999999"
                     android:textSize="@dimen/sp_13" />
                 <com.xingshi.view.RichEditText
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_120"
                     android:background="@null"
@@ -134,6 +133,7 @@
                     android:textSize="13sp"
                     android:id="@+id/rich_text"/>
                 <Button
+                    android:visibility="gone"
                     android:id="@+id/bt"
                     android:layout_marginTop="@dimen/dp_100"
                     android:layout_width="wrap_content"

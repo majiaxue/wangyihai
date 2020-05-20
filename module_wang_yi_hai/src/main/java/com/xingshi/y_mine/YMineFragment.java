@@ -14,6 +14,7 @@ import com.xingshi.mvp.BaseFragment;
 import com.xingshi.utils.SPUtil;
 import com.xingshi.y_main.R;
 import com.xingshi.y_main.R2;
+import com.xingshi.y_mine.y_balance_account.YBalanceAccountActivity;
 import com.xingshi.y_mine.y_commission.YCommissionActivity;
 import com.xingshi.y_mine.y_contribution_value.YContributionValueActivity;
 import com.xingshi.y_mine.y_currency_balance.YCurrencyBalanceActivity;
@@ -130,13 +131,13 @@ public class YMineFragment extends BaseFragment<YMineView, YMinePresenter> imple
                 startActivity(new Intent(getContext(), YCommissionActivity.class));
             }
         });
-//        //余额
-//        yMineYueLinear.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(getContext(), YBalanceAccountActivity.class));
-//            }
-//        });
+        //余额
+        yMineYueLinear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), YBalanceAccountActivity.class));
+            }
+        });
     }
 
     @Override
@@ -157,8 +158,8 @@ public class YMineFragment extends BaseFragment<YMineView, YMinePresenter> imple
         yMineLevel.setText(yMineBean.getMemberLevelName());
         yMineBi.setText(yMineBean.getCurrencyBalance());
         yMineGongXianZhi.setText(yMineBean.getContribution());
-        yMineYongJin.setText(yMineBean.getBlance());
-        yMineYue.setText(yMineBean.getTotalBackMoney());
+        yMineYongJin.setText(yMineBean.getTotalBackMoney());
+        yMineYue.setText(yMineBean.getBlance());
         yMineIncomeAmount.setText(yMineBean.getBusinessBalance());
     }
 

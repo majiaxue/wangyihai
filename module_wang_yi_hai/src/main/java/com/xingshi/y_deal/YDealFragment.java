@@ -73,8 +73,8 @@ public class YDealFragment extends BaseFragment<YDealView, YDealPresenter> imple
 
     @Override
     public void loadData(double totalPrice, double totalServiceCharge) {
-        yDealPlatform.setText("￥" + totalPrice);
-        yDealTotalFee.setText("￥" + totalServiceCharge);
+        yDealPlatform.setText("" + totalPrice);
+        yDealTotalFee.setText("" + totalServiceCharge);
         //图表
         presenter.initTuBiao(yDealLineChart);
     }

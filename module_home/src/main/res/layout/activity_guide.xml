@@ -8,6 +8,7 @@
 
 
     <com.stx.xhb.xbanner.XBanner
+        app:pointsVisibility="false"
         android:id="@+id/guide_banner"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

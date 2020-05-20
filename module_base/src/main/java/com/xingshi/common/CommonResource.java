@@ -266,6 +266,8 @@ public class CommonResource {
     public static final String GOODSDETAILS = "/mall/goods/rest/tbk/goods/goods_details";   //最新淘客详情接口
     public static final String GETGOODSLIST = "/mall/goods/rest/tbk/goods/get_goods_list";   //淘抢购聚划算接口
     public static final String BRANDLIST = "/mall/goods/rest/tbk/goods/brandList";   //品牌接口
+    ///rest/user/upload/order
+    public static final String UPLOADORDER2 = "/rest/user/upload/order";      //上传头像
     public static final String UPLOADORDER = "/file/upload/order";      //上传头像
     public static final String QUERYXSQGSPLIST = "/rest/tbk/goods/time/buy";      //限时抢购
     public static final String DELIVERGOODSREMIND = "/mall/order/rest/order/deliverGoodsRemind";      //订单发货提醒

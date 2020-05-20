@@ -338,11 +338,9 @@ public class ATipToReleasePresenter extends BasePresenter<ATipToReleaseView> {
             Bitmap bitmap = BitmapFactory.decodeStream(mContext.getContentResolver().openInputStream(fileUri));
             String base64 = ImageUtil.bitmapToBase64(bitmap);
             getView().showHeader(base64, fileUri);
-            LogUtil.e("图片----------"+fileUri);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        updateList();
     }
 
     public void takePhoto() {

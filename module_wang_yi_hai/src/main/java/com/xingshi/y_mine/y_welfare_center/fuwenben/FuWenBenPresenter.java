@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
+import android.util.Log;
 import android.view.View;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -144,6 +145,7 @@ public class FuWenBenPresenter extends BasePresenter<FuWenBenView> {
                 String fileName = jsonObject.getString("fileName");
                 if (getView() != null) {
                     getView().imagePath(CommonResource.BASEURL_8083 + "/" + bucketName + "/" + fileName);
+                    LogUtil.e("图片路径---------"+CommonResource.BASEURL_8083 + "/" + bucketName + "/" + fileName);
                 }
              //   uriList.add(CommonResource.BASEURL_8083 + "/" + bucketName + "/" + fileName);
                 imgList.add(CommonResource.BASEURL_8083 + "/" + bucketName + "/" + fileName);
@@ -182,6 +184,8 @@ public class FuWenBenPresenter extends BasePresenter<FuWenBenView> {
                 cursor.close();
             }
         }
+        LogUtil.e("date------------------"+data);
+        getView().getPath(data);
         return data;
     }
 

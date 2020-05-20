@@ -27,8 +27,6 @@ import butterknife.BindView;
  * 区块商品详情
  */
 public class YGoodsDetailsActivity extends BaseActivity<YGoodsDetailsView, YGoodsDetailsPresenter> implements YGoodsDetailsView {
-
-
     @BindView(R2.id.y_goods_details_buy_goods)
     TextView yGoodsDetailsBuyGoods;
     @BindView(R2.id.y_goods_detail_banner)

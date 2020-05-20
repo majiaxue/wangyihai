@@ -57,7 +57,7 @@ public class YTaskPresenter extends BasePresenter<YTaskView> {
                             view.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    YPopUtil.conversionGoods(mContext, list.get(index).getNumber(), new OnClearCacheListener() {
+                                    YPopUtil.conversionGoods(mContext, list.get(index).getConsume(), new OnClearCacheListener() {
                                         @Override
                                         public void setOnClearCache(final PopupWindow pop, View confirm) {
                                             confirm.setOnClickListener(new View.OnClickListener() {

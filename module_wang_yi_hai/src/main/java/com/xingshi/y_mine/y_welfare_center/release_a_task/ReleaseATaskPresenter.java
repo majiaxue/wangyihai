@@ -227,6 +227,8 @@ public class ReleaseATaskPresenter extends BasePresenter<ReleaseATaskView> {
             RetrofitUtil.getInstance().toSubscribe(responseBodyObservable, new OnMyCallBack(new OnDataListener() {
                 @Override
                 public void onSuccess(String result, String msg) {
+                    Toast.makeText(mContext, "发布成功", Toast.LENGTH_SHORT).show();
+                    ((Activity)mContext).finish();
                     LogUtil.e("发布任务" + result);
                 }
 

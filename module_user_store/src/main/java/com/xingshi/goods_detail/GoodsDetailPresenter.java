@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -143,7 +144,8 @@ public class GoodsDetailPresenter extends BasePresenter<GoodsDetailView> {
                 }.getType());
 
                 dataList = userGoodsDetail.getSkuStockList();
-
+                LogUtil.e("商品详情解析后"+userGoodsDetail.toString());
+                LogUtil.e("datelist---------"+dataList.toString());
                 //规格缩略图
                 String imgTemp = "";
                 for (int i = 0; i < dataList.size(); i++) {
@@ -157,6 +159,7 @@ public class GoodsDetailPresenter extends BasePresenter<GoodsDetailView> {
                         }
                     }
                 }
+                LogUtil.e("走了1");
 
                 if (dataList != null && dataList.size() > 0) {
                     if (dataList.get(0).getSp2() == null) {
@@ -167,7 +170,7 @@ public class GoodsDetailPresenter extends BasePresenter<GoodsDetailView> {
                         attrSize = 3;
                     }
                 }
-
+                LogUtil.e("走了2");
                 if (dataList.size() > 0 && attrSize > 1) {
                     for (int i = 0; i < dataList.size(); i++) {
                         boolean isHas = false;
@@ -187,12 +190,14 @@ public class GoodsDetailPresenter extends BasePresenter<GoodsDetailView> {
 //                        sp2List.add(new ChooseInsideBean(split[i]));
 //                    }
                 }
+                LogUtil.e("走了3");
                 if (dataList.size() > 0 && attrSize > 2) {
                     for (int i = 0; i < dataList.size(); i++) {
                         if (dataList.get(i).getSp1().equals(sp1List.get(0).getContent()) && dataList.get(i).getSp2().equals(sp2List.get(0).getContent())) {
                             sp3List.add(new ChooseInsideBean(dataList.get(i).getSp3(), dataList.get(i).getPic(), dataList.get(i).getPrice(), true));
                         }
                     }
+                    LogUtil.e("走了4");
 
 //                    String[] split = userGoodsDetail.getXsProductAttributes().get(2).getInputList().split(",");
 //                    for (int i = 0; i < split.length; i++) {
@@ -206,18 +211,29 @@ public class GoodsDetailPresenter extends BasePresenter<GoodsDetailView> {
                         chooseGoodsPop();
                     }
                 });
+                LogUtil.e("走了5");
 
                 if (getView() != null) {
+                    LogUtil.e("走了6");
                     getView().loadImage(goodsImageAdapter);
+                    LogUtil.e("走了7");
                     getView().loadUI(userGoodsDetail, sp1List.size());
+                    LogUtil.e("走了spllist"+sp1List.toString());
+                    LogUtil.e("走了8");
                 }
+                LogUtil.e("走了这");
 
                 //轮播图
                 String albumPics = userGoodsDetail.getAlbumPics();
+                LogUtil.e("轮播图--------"+albumPics);
                 bannerList = new ArrayList<>();
                 String[] split = albumPics.split(",");
-                for (int i = 0; i < split.length; i++) {
-                    bannerList.add(new BannerBean.RecordsBean(split[i]));
+                if (userGoodsDetail.getAlbumPics().equals("")){
+                    bannerList.add(new BannerBean.RecordsBean(userGoodsDetail.getPic()));
+                }else {
+                    for (int i = 0; i < split.length; i++) {
+                        bannerList.add(new BannerBean.RecordsBean(split[i]));
+                    }
                 }
                 if (getView() != null) {
                     getView().loadBanner(bannerList);
@@ -363,14 +379,12 @@ public class GoodsDetailPresenter extends BasePresenter<GoodsDetailView> {
     }
 
     public void detailParms() {
-        List<ParmsBean> dataList = new ArrayList<>();
-        dataList.add(new ParmsBean("品牌", "李宁"));
-        dataList.add(new ParmsBean("尺码", "M  L  XL  XXL"));
-        dataList.add(new ParmsBean("领型", "鸡心领"));
-        dataList.add(new ParmsBean("颜色", "黑色  白色  灰色  卡其色"));
-        dataList.add(new ParmsBean("袖型", "常规"));
-        dataList.add(new ParmsBean("货号", "LN19A-Y3269"));
-        PopUtil.parmsPop(mContext, dataList);
+        List<UserGoodsDetail.XsProductAttributesBean> xsProductAttributes = userGoodsDetail.getXsProductAttributes();
+        List<ParmsBean> list=new ArrayList<>();
+        for (int i = 0; i < xsProductAttributes.size(); i++) {
+            list.add(new ParmsBean(xsProductAttributes.get(i).getName(),xsProductAttributes.get(i).getInputList()));
+        }
+        PopUtil.parmsPop(mContext, list);
     }
 
     public void chooseGoodsPop() {
@@ -1642,10 +1656,10 @@ public class GoodsDetailPresenter extends BasePresenter<GoodsDetailView> {
 
     public void callServe() {
         ARouter.getInstance().build("/module_home/WebDetailActivity").withString("url", userGoodsDetail.getCustomerService()).navigation();
-//        Intent intent = new Intent(Intent.ACTION_DIAL);
-//        Uri data = Uri.parse("tel:" + CommonResource.SERVICE_PHONE);
-//        intent.setData(data);
-//        mContext.startActivity(intent);
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        Uri data = Uri.parse("tel:" + CommonResource.SERVICE_PHONE);
+        intent.setData(data);
+        mContext.startActivity(intent);
     }
 
     public void seeBigPicture(int position) {

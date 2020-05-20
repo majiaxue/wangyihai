@@ -68,7 +68,6 @@ public class YConfirmOrderActivity extends BaseActivity<YConfirmOrderView, YConf
         yConfirmOrderPrice.setText("￥ " + confirmBean.getPrice());
         yConfirmOrderOriginalPrice.setText("￥ " + confirmBean.getProductPrice());
         yConfirmOrderNumberTotalPrice.setText("共" + confirmBean.getQuantity() + "件  合计：￥" + (confirmBean.getQuantity() * confirmBean.getPrice()));
-
         presenter.getAddress();
     }
 
