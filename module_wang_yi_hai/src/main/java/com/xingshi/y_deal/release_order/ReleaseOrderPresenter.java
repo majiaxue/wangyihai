@@ -130,10 +130,12 @@ public class ReleaseOrderPresenter extends BasePresenter<ReleaseOrderView> {
     }
 
     //卖单
-    public void releaseSellOrders(String price, String num, int totalAmount) {
+    public void releaseSellOrders(String price, String num, double totalAmount) {
+        LogUtil.e("num---------"+num);
+        LogUtil.e("totalamount-------------"+totalAmount);
         if (TextUtils.isEmpty(price)) {
             Toast.makeText(mContext, "请输入单价", Toast.LENGTH_SHORT).show();
-        } else if (TextUtils.isEmpty(num)) {
+        } else if (TextUtils.isEmpty(num+"")) {
             Toast.makeText(mContext, "请输入数量", Toast.LENGTH_SHORT).show();
         } else {
             Map map = MapUtil.getInstance().addParms("price", price).addParms("number", num).addParms("totalPrice", totalAmount).build();

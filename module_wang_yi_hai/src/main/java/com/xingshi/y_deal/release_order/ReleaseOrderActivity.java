@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.ali.auth.third.core.util.StringUtil;
 import com.xingshi.mvp.BaseActivity;
+import com.xingshi.utils.LogUtil;
 import com.xingshi.y_main.R;
 import com.xingshi.y_main.R2;
 
@@ -87,7 +88,14 @@ public class ReleaseOrderActivity extends BaseActivity<ReleaseOrderView, Release
         releaseOrderReleaseSaleSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.releaseSellOrders(releaseOrderReleaseSalePrice.getText().toString(), releaseOrderReleaseSaleNum.getText().toString(), totalAmount);
+            String num=    releaseOrderReleaseSaleNum.getText().toString();
+            double number=Integer.valueOf(num)*(1-serviceCharge);
+             String s = String.valueOf(number);
+//                String[] split = s.split("//.");
+//                s = split[0];
+//                int i = Integer.parseInt(s);
+             LogUtil.e("数量----"+s);
+             presenter.releaseSellOrders(releaseOrderReleaseSalePrice.getText().toString(),s, (totalAmount-(totalAmount*serviceCharge)));
             }
         });
 
@@ -167,7 +175,7 @@ public class ReleaseOrderActivity extends BaseActivity<ReleaseOrderView, Release
                     String num = StringUtil.isBlank(releaseOrderReleaseSaleNum.getText().toString()) ? "0" : releaseOrderReleaseSaleNum.getText().toString();
                     if (!"0".equals(num)) {
                         totalAmount = Integer.parseInt(num) * Integer.parseInt(releaseOrderReleaseSalePrice.getText().toString());
-                        releaseOrderReleaseSaleSellAmount.setText(totalAmount + "");
+                        releaseOrderReleaseSaleSellAmount.setText(totalAmount-totalAmount*serviceCharge + "");
                         releaseOrderReleaseSaleServiceCharge.setText((serviceCharge * totalAmount) + "");
                     } else {
                         releaseOrderReleaseSaleSellAmount.setText("0");
@@ -199,7 +207,7 @@ public class ReleaseOrderActivity extends BaseActivity<ReleaseOrderView, Release
                     String price = StringUtil.isBlank(releaseOrderReleaseSalePrice.getText().toString()) ? "0" : releaseOrderReleaseSalePrice.getText().toString();
                     if (!"0".equals(price)) {
                         totalAmount = Integer.parseInt(price) * Integer.parseInt(releaseOrderReleaseSaleNum.getText().toString());
-                        releaseOrderReleaseSaleSellAmount.setText(totalAmount + "");
+                        releaseOrderReleaseSaleSellAmount.setText(totalAmount-totalAmount*serviceCharge + "");
                         releaseOrderReleaseSaleServiceCharge.setText((serviceCharge * totalAmount) + "");
                     } else {
                         releaseOrderReleaseSaleSellAmount.setText("0");
@@ -240,6 +248,7 @@ public class ReleaseOrderActivity extends BaseActivity<ReleaseOrderView, Release
     @Override
     public void serviceCharge(double serviceCharge, String max, String less) {
         this.serviceCharge = serviceCharge;
+        LogUtil.e("这是手续费---------"+serviceCharge);
         releaseOrderReleaseSaleRule.setText("卖币扣除1倍贡献值\n"+ "平台回购价10元起");
     }
 
