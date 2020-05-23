@@ -66,6 +66,7 @@ public class YDealPresenter extends BasePresenter<YDealView> {
     private final List<String> historyBeanList = new ArrayList<>();
     private List<YDealBean.RecordsBean> yDealBeanList = new ArrayList<>();
     private TradingCenterTopBean tradingCenterTopBean;
+    private YDealAdapter yDealAdapter;
 
     public YDealPresenter(Context context) {
         super(context);
@@ -177,11 +178,14 @@ public class YDealPresenter extends BasePresenter<YDealView> {
                 LogUtil.e("买单列表" + result);
                 YDealBean yDealBean = JSON.parseObject(result, new TypeReference<YDealBean>() {
                 }.getType());
+                yDealBeanList.addAll(yDealBean.getRecords());
                 if (yDealBean.getRecords().size() != 0) {
-                    yDealBeanList.addAll(yDealBean.getRecords());
-                    final YDealAdapter yDealAdapter = new YDealAdapter(mContext, yDealBeanList, R.layout.item_y_deal_rec);
-                    getView().loadAdapter(yDealAdapter);
-
+                    if (yDealAdapter==null){
+                        yDealAdapter = new YDealAdapter(mContext, yDealBeanList, R.layout.item_y_deal_rec);
+                        getView().loadAdapter(yDealAdapter);
+                    }else {
+                        yDealAdapter.notifyDataSetChanged();
+                    }
                     yDealAdapter.setViewOnClickListener(new MyRecyclerAdapter.ViewOnClickListener() {
                         @Override
                         public void ViewOnClick(View view, final int index) {

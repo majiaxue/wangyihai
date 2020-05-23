@@ -27,8 +27,6 @@ import butterknife.BindView;
  * 我的买单
  */
 public class MyPayOrderActivity extends BaseActivity<MyPayOrderActivity, MyPayOrderPresenter> implements MyPayOrderView {
-
-
     @BindView(R2.id.my_pay_order_back)
     ImageView myPayOrderBack;
     @BindView(R2.id.my_pay_order_title)

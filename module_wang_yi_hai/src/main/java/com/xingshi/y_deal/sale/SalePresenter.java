@@ -107,7 +107,7 @@ public class SalePresenter extends BasePresenter<SaleView> {
     }
 
     public void commit(int id, String bz, List<String> img) {
-        Map build = MapUtil.getInstance().addParms("id", id).addParms("bz", bz).addParms("img", img).build();
+        Map build = MapUtil.getInstance().addParms("id", id).addParms("bz", bz).build();
         String jsonString = JSON.toJSONString(build);
         RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), jsonString);
         Observable<ResponseBody> responseBodyObservable = RetrofitUtil.getInstance().getApi(CommonResource.BASEURL_9006).postHeadWithBody(CommonResource.APPEAL, body, SPUtil.getToken());

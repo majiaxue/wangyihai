@@ -127,6 +127,12 @@ public class SaleActivity extends BaseActivity<SaleView, SalePresenter> implemen
         LogUtil.e("走了这-------");
         sellOrderDetailsText3.setText("支付凭证：");
         sellOrderDetailsText2.setVisibility(View.GONE);
+        LogUtil.e("状态----------"+status);
+        if (status == 1) {
+            sellOrderDetailsComplaint.setVisibility(View.VISIBLE);
+        } else {
+            sellOrderDetailsComplaint.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -213,12 +219,6 @@ public class SaleActivity extends BaseActivity<SaleView, SalePresenter> implemen
     @Override
     public void loadData(BuyAndSellDetailBean bean) {
         this.bean = bean;
-        LogUtil.e("状态----------"+status);
-        if (0 == status) {
-            sellOrderDetailsComplaint.setVisibility(View.GONE);
-        } else {
-            sellOrderDetailsBottomLinear.setVisibility(View.VISIBLE);
-        }
 
         sellOrderDetailsOrderAccount.setText(bean.getOrderNumber());
         sellOrderDetailsSingularization.setText(bean.getNumber() + "");

@@ -136,7 +136,12 @@ public class PopUtils {
     public static void seeBigImg(final Context context, String uri) {
         View inflate = LayoutInflater.from(context).inflate(com.xingshi.module_base.R.layout.pop_full_image, null);
         ImageView img = inflate.findViewById(com.xingshi.module_base.R.id.pop_full_img);
-        Glide.with(context).load(Uri.parse(uri)).into(img);
+        if(!uri.equals("")){
+            Glide.with(context).load(Uri.parse(uri)).into(img);
+        }else {
+            LogUtil.e("点击了");
+        }
+
 
         final PopupWindow popupWindow = new PopupWindow(inflate, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT, true);
         popupWindow.setOutsideTouchable(true);

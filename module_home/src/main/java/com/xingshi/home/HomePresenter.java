@@ -209,7 +209,23 @@ public class HomePresenter extends BasePresenter<HomeView> {
                         homeXbanner.setOnItemClickListener(new XBanner.OnItemClickListener() {
                             @Override
                             public void onItemClick(XBanner banner, Object model, View view, int position) {
+
 //                                Toast.makeText(mContext, "点击了第" + position + "图片", Toast.LENGTH_SHORT).show();
+                                if (beanList.get(position).getUrl()!=null&&beanList.get(position).getUrl().length()>1){
+                                    LogUtil.e("这是url-----------"+beanList.get(position).getUrl());
+                                    LogUtil.e("走了1");
+                                    ARouter.getInstance().build("/model_home/BannerGlideActivity")
+                                            .withString("url",beanList.get(position).getUrl())
+                                            .navigation();
+                                }else if (beanList.get(position).getPid()!=null){
+                                    LogUtil.e("走了2");
+                                    ARouter.getInstance().build("/module_user_store/GoodsDetailActivity")
+                                            .withString("id",beanList.get(position).getPid())
+                                            .navigation();
+                                }else {
+                                    LogUtil.e("走了3");
+                                    LogUtil.e("点击了第----"+position+"------张图片");
+                                }
                             }
                         });
                     } else {

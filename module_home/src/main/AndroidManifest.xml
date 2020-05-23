@@ -55,6 +55,9 @@
         <activity
             android:name="com.xingshi.main.GuideActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xingshi.home.bannerzhanshi.BannerGlideActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name="com.xingshi.main.WelcomeActivity"

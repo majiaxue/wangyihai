@@ -50,8 +50,7 @@
                 android:padding="@dimen/dp_10"
                 android:text="投诉"
                 android:textColor="#ffffffff"
-                android:textSize="@dimen/dp_13"
-                android:visibility="gone" />
+                android:textSize="@dimen/dp_13" />
 
         </RelativeLayout>
     </LinearLayout>

@@ -161,6 +161,7 @@ public class MySellOrderPresenter extends BasePresenter<MySellOrderView> {
 //                                    Toast.makeText(mContext, "无法查看", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(mContext, SellActivity.class);
                                 intent.putExtra("status", askToBuyList.get(index).getStatus());
+                                LogUtil.e("投诉状态---------"+askToBuyList.get(index).getStatus());
                                 intent.putExtra("id", askToBuyList.get(index).getId());
                                 mContext.startActivity(intent);
                             }

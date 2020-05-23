@@ -48,7 +48,7 @@ public class YConfirmPaymentPresenter extends BasePresenter<YConfirmPaymentView>
                             Toast.makeText(mContext, "请输入密码", Toast.LENGTH_SHORT).show();
                         } else if (length < 6) {
                             Toast.makeText(mContext, "请输入完整的密码", Toast.LENGTH_SHORT).show();
-                        } else if (length == 6) {
+                        } else {
                             final Map map = MapUtil.getInstance().addParms("orderSn", orderSn).addParms("password", password.getText().toString()).build();
                             Observable head = RetrofitUtil.getInstance().getApi(CommonResource.BASEURL_9004).getHead(CommonResource.EXCHANGEPRODUCT, map, SPUtil.getToken());
                             RetrofitUtil.getInstance().toSubscribe(head, new OnMyCallBack(new OnDataListener() {
